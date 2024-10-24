@@ -55,3 +55,17 @@ aws cloudformation create-stack \
   --template-body file://path-to-your-cloudformation-file.yaml \
   --parameters ParameterKey=KeyName,ParameterValue=your-key-name \
   --capabilities CAPABILITY_NAMED_IAM
+VPC (10.16.0.0/16)
+│
+├── Public Subnet A (10.16.48.0/20) - Web Tier
+│   └── NAT Gateway, IGW
+├── Private Subnet A (10.16.32.0/20) - App Tier
+├── Private Subnet A (10.16.16.0/20) - DB Tier
+│
+├── Public Subnet B (10.16.112.0/20) - Web Tier
+├── Private Subnet B (10.16.96.0/20) - App Tier
+├── Private Subnet B (10.16.80.0/20) - DB Tier
+│
+└── Public Subnet C (10.16.176.0/20) - Web Tier
+    ├── Private Subnet C (10.16.160.0/20) - App Tier
+    └── Private Subnet C (10.16.144.0/20) - DB Tier
